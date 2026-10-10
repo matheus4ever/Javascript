@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 5</title>
+</head>
+<body>
+    <h1>Lista de itens</h1>
+
+    <ul id="lista">
+        <li>Item n° 1</li>
+    </ul>
+
+    <button id="botao">Adicionar item</button>
+
+    <script>
+        var lista = document.getElementById("lista");
+        var botao = document.getElementById("botao");
+
+        botao.addEventListener("click", function () {
+            // conta quantos li tem na lista e soma 1
+            var numero = lista.children.length + 1;
+
+            var novoItem = document.createElement("li");
+            novoItem.textContent = "Item n° " + numero;
+
+            lista.appendChild(novoItem);
+        });
+    </script>
+</body>
+</html>
