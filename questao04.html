@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 4</title>
+</head>
+<body>
+    <h1>Contador</h1>
+    <p id="contador">0</p>
+
+    <button id="botaoSomar">Somar +1</button>
+    <button id="botaoZerar">Zerar</button>
+
+    <script>
+        var numero = 0;
+        var paragrafo = document.getElementById("contador");
+        var botaoSomar = document.getElementById("botaoSomar");
+        var botaoZerar = document.getElementById("botaoZerar");
+
+        botaoSomar.addEventListener("click", function () {
+            numero = numero + 1;
+            paragrafo.textContent = numero;
+        });
+
+        botaoZerar.addEventListener("click", function () {
+            numero = 0;
+            paragrafo.textContent = numero;
+        });
+    </script>
+</body>
+</html>
