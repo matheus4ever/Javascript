@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 10</title>
+</head>
+<body>
+    <h1>Troca de imagens</h1>
+
+    <img id="foto" src="https://picsum.photos/id/237/600/400" alt="Imagem">
+    <br><br>
+
+    <button id="anterior">Anterior</button>
+    <button id="proxima">Próxima</button>
+
+    <script>
+        const imagens = [
+            "https://picsum.photos/id/237/600/400",
+            "https://picsum.photos/id/238/600/400",
+            "https://picsum.photos/id/239/600/400",
+            "https://picsum.photos/id/240/600/400"
+        ];
+
+        let indice = 0;
+        var foto = document.getElementById("foto");
+
+        function trocarImagem() {
+            foto.src = imagens[indice];
+
+            indice++;
+
+            if (indice >= imagens.length) {
+                indice = 0;
+            }
+        }
+
+        setInterval(trocarImagem, 5000);
+
+        document.getElementById("proxima").addEventListener("click", function () {
+            trocarImagem();
+        });
+
+        document.getElementById("anterior").addEventListener("click", function () {
+            indice = indice - 2;
+
+            if (indice < 0) {
+                indice = indice + imagens.length;
+            }
+
+            trocarImagem();
+        });
+    </script>
+</body>
+</html>
