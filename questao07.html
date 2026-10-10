@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 7 - Gravity Falls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        img {
+            width: 250px;
+            border: 3px solid green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gravity Falls</h1>
+
+    
+    <img id="personagem" src="https://static.wikia.nocookie.net/liberproeliis/images/1/15/Dipper_Pines.png/revision/latest?cb=20200115140257&path-prefix=pt-br" alt="Personagem">
+    <p id="frase">Passe o mouse no personagem!</p>
+
+    <button id="botaoTrocar">Trocar personagem</button>
+
+    <script>
+        var imagem = document.getElementById("personagem");
+        var frase = document.getElementById("frase");
+        var botao = document.getElementById("botaoTrocar");
+
+        imagem.addEventListener("mouseenter", function () {
+            frase.textContent = "Olá! Eu sou o Dipper, vamos investigar um mistério?";
+        });
+
+        imagem.addEventListener("mouseleave", function () {
+            frase.textContent = "Ei, onde você vai? Ainda tem mistério pra resolver!";
+        });
+
+        imagem.addEventListener("mousemove", function () {
+            frase.textContent = "Estou te vendo mexer o mouse...";
+        });
+
+        imagem.addEventListener("click", function () {
+            frase.textContent = "Ai! Não clica em mim!";
+        });
+
+       
+        var personagemAtual = "dipper";
+
+        botao.addEventListener("click", function () {
+            if (personagemAtual == "dipper") {
+                imagem.src = "https://static.wikia.nocookie.net/disney/images/7/7f/Mabel-pines.png/revision/latest?cb=20160307031744&path-prefix=pt-br";
+                personagemAtual = "mabel";
+                frase.textContent = "Agora é a Mabel!";
+            } else {
+                imagem.src = "https://static.wikia.nocookie.net/liberproeliis/images/1/15/Dipper_Pines.png/revision/latest?cb=20200115140257&path-prefix=pt-br";
+                personagemAtual = "dipper";
+                frase.textContent = "Voltou o Dipper!";
+            }
+        });
+    </script>
+</body>
+</html>
