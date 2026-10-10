@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 11</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #dde6f0;
+        }
+
+        .caixa {
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 4px;
+            padding: 5px;
+        }
+
+        p {
+            color: red;
+            font-size: 13px;
+            margin-top: 0px;
+        }
+
+        #sucesso {
+            color: green;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <h2>Cadastro</h2>
+
+        <label>Nome</label>
+        <input type="text" id="nome">
+        <p id="erro_nome"></p>
+
+        <label>E-mail</label>
+        <input type="text" id="email">
+        <p id="erro_email"></p>
+
+        <label>Senha</label>
+        <input type="password" id="senha">
+        <p id="erro_senha"></p>
+
+        <label>Confirmar senha</label>
+        <input type="password" id="confirmar">
+        <p id="erro_confirmar"></p>
+
+        <input type="checkbox" id="mostrar" style="width: auto;"> Mostrar senha
+        <br><br>
+
+        <button id="enviar">Enviar</button>
+        <p id="sucesso"></p>
+    </div>
+
+    <script>
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const senhaRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+        var nome = document.getElementById("nome");
+        var email = document.getElementById("email");
+        var senha = document.getElementById("senha");
+        var confirmar = document.getElementById("confirmar");
+        var mostrar = document.getElementById("mostrar");
+        var enviar = document.getElementById("enviar");
+
+        enviar.addEventListener("click", function () {
+            var tudo_certo = true;
+
+            document.getElementById("erro_nome").innerHTML = "";
+            document.getElementById("erro_email").innerHTML = "";
+            document.getElementById("erro_senha").innerHTML = "";
+            document.getElementById("erro_confirmar").innerHTML = "";
+            document.getElementById("sucesso").innerHTML = "";
+
+            if (nome.value.length < 3) {
+                document.getElementById("erro_nome").innerHTML = "O nome precisa ter pelo menos 3 letras";
+                tudo_certo = false;
+            }
+
+            if (emailRegex.test(email.value) == false) {
+                document.getElementById("erro_email").innerHTML = "E-mail inválido";
+                tudo_certo = false;
+            }
+
+            if (senhaRegex.test(senha.value) == false) {
+                document.getElementById("erro_senha").innerHTML = "A senha precisa ter 8 caracteres, uma maiúscula, um número e um caractere especial";
+                tudo_certo = false;
+            }
+
+            if (senha.value != confirmar.value) {
+                document.getElementById("erro_confirmar").innerHTML = "As senhas estão diferentes";
+                tudo_certo = false;
+            }
+
+            if (tudo_certo == true) {
+                document.getElementById("sucesso").innerHTML = "Cadastro feito com sucesso!";
+            }
+        });
+
+        mostrar.addEventListener("click", function () {
+            if (mostrar.checked == true) {
+                senha.type = "text";
+                confirmar.type = "text";
+            } else {
+                senha.type = "password";
+                confirmar.type = "password";
+            }
+        });
+    </script>
+</body>
+</html>
