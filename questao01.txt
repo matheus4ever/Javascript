@@ -1,0 +1,9 @@
+Questão 1
+
+O JavaScript no frontend serve pra fazer a página ter vida. O HTML só monta a estrutura e o CSS deixa bonito, mas sem JavaScript a página fica parada, só mostrando o que já tá escrito.
+
+Como o JS roda direto no navegador, ele consegue mudar coisas na hora sem precisar recarregar a página. Por exemplo: trocar um texto ou uma imagem, reagir quando o usuário clica ou digita alguma coisa, e checar se um formulário tá preenchido certo antes de mandar. Também dá pra fazer coisas como contador, menu, modo escuro e carrossel de imagens.
+
+Resumindo, o objetivo é deixar o site interativo e mais fácil de usar.
+
+Onde pesquisei: MDN Web Docs e W3Schools.
