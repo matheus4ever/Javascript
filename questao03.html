@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 3</title>
+</head>
+<body>
+    <h1 id="titulo">Título original</h1>
+
+    <script>
+        var titulo = document.getElementById("titulo");
+
+        // numero aleatorio entre 30 e 100
+        var tamanho = Math.floor(Math.random() * 71) + 30;
+
+        titulo.style.color = "purple";
+        titulo.style.fontSize = tamanho + "px";
+        titulo.textContent = "Agora o tamanho é " + tamanho + "px";
+    </script>
+</body>
+</html>
