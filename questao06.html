@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 6</title>
+</head>
+<body>
+    <h1>Gerador de nome de aventura</h1>
+
+    <h2 id="nomeAventura">Clique no botão!</h2>
+    <button id="botao">Gerar nova aventura</button>
+
+    <script>
+        var acoes = ["A Busca", "A Batalha", "O Resgate"];
+        var locais = ["na Floresta Sombria", "no Reino Perdido", "na Montanha Misteriosa"];
+        var complementos = ["do Dragão", "do Tesouro Esquecido", "da Espada Ancestral"];
+
+        var nome = document.getElementById("nomeAventura");
+        var botao = document.getElementById("botao");
+
+        botao.addEventListener("click", function () {
+            // sorteia uma posição de cada lista
+            var a = Math.floor(Math.random() * acoes.length);
+            var l = Math.floor(Math.random() * locais.length);
+            var c = Math.floor(Math.random() * complementos.length);
+
+            nome.textContent = acoes[a] + " " + locais[l] + " " + complementos[c];
+        });
+    </script>
+</body>
+</html>
