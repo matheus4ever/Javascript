@@ -1,0 +1,15 @@
+Questão 2
+
+Abri o site da globo, apertei F12 e fui na aba Console.
+
+a) Mudei o título da notícia com esse comando:
+
+document.querySelector('.post__title').textContent = 'IFPR anuncia que não vai ter prova na semana que vem';
+
+b) Pra trocar a imagem, mudei o srcset dela:
+
+document.querySelector('.post__image img').srcset = 'https://picsum.photos/id/237/600/400';
+
+Obs: se der erro no b, é porque o seletor da imagem é outro, ai é só clicar com o botão direito na imagem, ir em inspecionar e ver qual é a classe dela.
+
+Screenshot que pede está dentro dos arquivos do github
