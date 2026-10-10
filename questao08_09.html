@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 8 e 9</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        body.escuro {
+            background-color: #121212;
+            color: yellow;
+        }
+
+        body.escuro input {
+            background-color: black;
+            color: yellow;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="botaoModo">Modo escuro</button>
+
+    <h1>Qual sabor de sorvete?</h1>
+
+    <input type="text" id="campo" placeholder="Digite um sabor">
+    <p id="resposta"></p>
+
+    <script>
+        var campo = document.getElementById("campo");
+        var resposta = document.getElementById("resposta");
+        var botaoModo = document.getElementById("botaoModo");
+
+        campo.addEventListener("input", function () {
+            var texto = campo.value.toLowerCase();
+
+            if (texto.length > 3) {
+                if (texto == "chocolate") {
+                    resposta.textContent = "Eu amo sorvete de chocolate!";
+                } else if (texto == "flocos") {
+                    resposta.textContent = "Ahh, mas chocolate é o meu favorito...";
+                } else {
+                    resposta.textContent = "Ahh, eu esperava um sabor de sorvete...";
+                }
+            } else {
+                resposta.textContent = "";
+            }
+        });
+
+        botaoModo.addEventListener("click", function () {
+            document.body.classList.toggle("escuro");
+
+            if (document.body.classList.contains("escuro")) {
+                botaoModo.textContent = "Modo claro";
+            } else {
+                botaoModo.textContent = "Modo escuro";
+            }
+        });
+    </script>
+</body>
+</html>
